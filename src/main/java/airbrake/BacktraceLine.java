@@ -17,7 +17,7 @@ public class BacktraceLine {
 	private final String methodName;
 
 	public BacktraceLine(String line) {
-		String classAndMethodName = line.replaceAll("\\(.*", "").replaceAll("^at ", "");
+		String classAndMethodName = line.replaceAll("\\(.*", "").replaceAll("^at ", "").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll("&", "&amp;");
 
 		int periodSepIndex = classAndMethodName.lastIndexOf(".");
 		if (periodSepIndex > 0) {
@@ -31,7 +31,7 @@ public class BacktraceLine {
 	}
 
 	private String fileName(String line) {
-		return line.replaceAll("^.*\\(", "").replaceAll(":.*", "");
+		return line.replaceAll("^.*\\(", "").replaceAll(":.*", "").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll("&", "&amp;");
 	}
 
 	private String methodName(String classAndMethodName) {
