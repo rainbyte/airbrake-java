@@ -16,6 +16,7 @@ public class AirbrakeNoticeBuilderUsingFilteredSystemProperties extends Airbrake
 		addMDCToSession();
 		standardEnvironmentFilters();
 		ec2EnvironmentFilters();
+		setRequest("", "");
 	}
 
 	private void addMDCToSession() {
