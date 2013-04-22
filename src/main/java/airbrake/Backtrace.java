@@ -4,8 +4,6 @@
 
 package airbrake;
 
-import static airbrake.ValidBacktraces.*;
-
 import java.text.*;
 import java.util.*;
 import java.util.regex.*;
